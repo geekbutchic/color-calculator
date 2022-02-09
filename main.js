@@ -1,59 +1,40 @@
-const color_combine = require("./main2");
-
 const prompt = require("prompt-sync")();
 
-let greet = prompt(
-  "Hello, this app allows you to find out what two colors you can construct to make one color or what one color deconstructs too.  Press Enter "
-);
+let greet = Number(prompt(
+  "Enter [1] for color constructor.  Enter [2] for color deconstructor: "
+));
 
-let choice = Number(
-  prompt("Type one for color-combinator or type two for color-deconstructor: ")
-);
+if (greet === 1) {  
 
-if (choice === one) {
-  prompt(one);
-} else if (choice === two) {
-  prompt(two);
+  prompt("Available colors are: Red, Blue, and Yellow: Press Enter");
+
+  let color1 = prompt("Enter the first color: ");
+  let color2 = prompt("Enter the second color: ");
+
+  if (color1 === "red" && color2 === "blue" || color1 === "blue" && color1 === "red") {
+      prompt("Purple")
+  } else if (color1 === "red" && color2 === "yellow" || color1 === "yellow" && color1 === "red") {
+      prompt("Orange");
+  } else if (color1 === "blue" && color2 === "yellow" || color1 === "yellow" && color2 === "blue") {
+      prompt("Green")
+  } else {
+      console.log("Error");
+  }
+
+} else if (greet === 2) {
+
+    let color3 = (prompt("Enter color to be deconstructed, purple, orange, and green: "));
+
+    if (color3 === "purple") {
+        prompt("Red & Blue: [Press ENTER to exit]");
+    } else if (color3 === "orange") {
+        prompt("Red & Yellow: [Press ENTER to exit]")
+    } else if (color3 === "green") {
+        prompt("Blue and Yellow: [Press ENTER to exit]")
+    } else {
+        console.log("Error");
+    }
 }
 
-let one = prompt("Choose two colors to combine to one color: ");
 
-let second = prompt("Choose a second color: ");
 
-let two = prompt("purple, orange, green, Please choose one of these colors: ");
-
-let red = "red";
-let blue = "blue";
-let orange = "orange";
-let green = "green";
-let yellow = "yellow";
-
-if (two === purple) {
-  prompt(
-    'Colors deconstruct to "RED" and "BLUE" press enter to choose another color.'
-  );
-} else if (two === orange) {
-  prompt(
-    'Colors deconstruct to "RED" and "Yellow" press enter to choose another color.'
-  );
-} else if (two === green) {
-  prompt(
-    'Colors deconstruct to "BLUE" and "Yellow" press enter to choose another color.'
-  );
-} else {
-  prompt('Please choose a valid color, "PURPLE", "ORANGE" "GREEN"!');
-}
-
-if ((one === red && second === blue) || (second === red && one === blue)) {
-  prompt("This combines to create Purple!");
-} else if (
-  (one === red && second === yellow) ||
-  (second === red && one === yellow)
-) {
-  prompt("This combines to create Orange!");
-} else if (
-  (one === blue && second === yellow) ||
-  (one === yellow && second === blue)
-) {
-  prompt("This combines to create Green");
-}
